@@ -1,7 +1,10 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Contacts from "./componenets/contacts/Contacts";
-import Header from "./componenets/layout/Header";
 import AddContact from "./componenets/contacts/AddContact";
+import Header from "./componenets/layout/Header";
+import About from "./componenets/pages/About";
+import NotFound from "./componenets/pages/NotFound";
 
 import { Provider } from "./context";
 
@@ -12,13 +15,19 @@ class App extends Component {
   render() {
     return (
       <Provider>
-        <div className="App">
-          <Header branding="Contact Manager" />
-          <div className="container">
-            <AddContact />
-            <Contacts />
+        <Router>
+          <div className="App">
+            <Header branding="Contact Manager" />
+            <div className="container">
+              <Switch>
+                <Route exact path="/" component={Contacts} />
+                <Route exact path="/contact/add" component={AddContact} />
+                <Route exact path="/about" component={About} />
+                <Route component={NotFound} />
+              </Switch>
+            </div>
           </div>
-        </div>
+        </Router>
       </Provider>
     );
   }
