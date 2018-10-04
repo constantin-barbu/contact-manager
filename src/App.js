@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Contacts from "./componenets/contacts/Contacts";
 import AddContact from "./componenets/contacts/AddContact";
 import EditContact from "./componenets/contacts/EditContact";
