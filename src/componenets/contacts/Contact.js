@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Consumer } from "../context";
+import { Consumer } from "../../context";
 
 class Contact extends Component {
   state = {
@@ -19,6 +19,7 @@ class Contact extends Component {
       <Consumer>
         {value => {
           const { dispatch } = value;
+
           return (
             <div className="card card-body mb-3">
               <h4>
